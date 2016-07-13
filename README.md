@@ -14,16 +14,16 @@ The contents of input.txt will look something like this:
 	*YetMoreResults*.t21	[1,2,3]
 
 * Each line in input.txt contains a path to a Tape21 file and a list of critical point numbers to fetch.
-* * The list of critical point numbers is comma-delimited without spaces, enclosed in square brackets `[ ]`.
-* * The path to the Tape21 file and the list of critical point numbers are separated by a tab (that's *one tab*).
+  * The list of critical point numbers is comma-delimited without spaces, enclosed in square brackets `[ ]`.
+  * The path to the Tape21 file and the list of critical point numbers are separated by a tab (that's **one tab**).
 * The path to the file can be absolute as in line 1, or relative as in lines 2-3, and can also include wildcard (glob) characters.
-* * If a relative path is provided then CPGobbler will assume the Tape21 file is in the same directory as input.txt, so on line 2, the file is assumed to be `/path/to/OtherResults.t21`.
-* * Line 3 uses wildcard characters, where asterisk (\*) represents zero or more non-white space characters, and question mark (?) represents a single non-white space character.
-* * Line 3 would return files such as
-* * * SP.LDA.YetMoreResults.t21 
-* * * 1\_YetMoreResults.t21 
-* * * YetMoreResults_GeometryOpt.t21 
-* * * 2016\_07\_13\_YetMoreResults.B3LYP.TZ2P.AllE.t21 
+  * If a relative path is provided then CPGobbler will assume the Tape21 file is in the same directory as input.txt, so on line 2, the file is assumed to be `/path/to/OtherResults.t21`.
+  * Line 3 uses wildcard characters, where asterisk (\*) represents zero or more non-white space characters, and question mark (?) represents a single non-white space character.
+  * Line 3 would return files such as
+    * SP.LDA.YetMoreResults.t21 
+    * 1\_YetMoreResults.t21 
+    * YetMoreResults_GeometryOpt.t21 
+    * 2016\_07\_13\_YetMoreResults.B3LYP.TZ2P.AllE.t21 
 
 ## Script options
 At the top of CPGobbler.py, there are several blocks of data indicating which information should be collected for critical points and atomic basins:
