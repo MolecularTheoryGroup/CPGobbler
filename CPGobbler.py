@@ -393,8 +393,10 @@ def main():
                                             for j in i['name']:
                                                 BACSV.write(j + ',')
                                     BACSV.write("\n")
-                                
-                                AtomNum = AtomOrderIndex[CurCPNum-1 + NumAtoms]
+#                                 Fetch the input atom number of the current nuclear CP.
+#                                 I guess this isn't necessary, so it's commented out.
+#                                 AtomNum = AtomOrderIndex[CurCPNum-1 + NumAtoms]
+                                AtomNum = CurCPNum
                                 for i in [T21FileName,CPNum,AtomNum]:
                                     BACSV.write(str(i) + ",")
                                 for i in CPCoords[CurCPNum-1]:
