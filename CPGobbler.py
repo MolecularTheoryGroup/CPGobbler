@@ -312,6 +312,18 @@ def main():
                         if '.' in T21BaseName:
                             T21BaseName = T21BaseName.rpartition('.')[0]
                             
+                            
+                        T21 = kf.kffile(T21FileName)
+                        ExitStatus = T21.stringData("General", "termination status")
+                        if not 'NORMAL TERMINATION' in ExitStatus:
+                            print "T21 file reports abnormal termination. skipping..."
+                            continue
+                        NumCPs = T21.read("Properties", "CP number of")
+                        if NumCPs is None or NumCPs <= 0:
+                            print "No CPs found, skipping..."
+                            continue
+                        T21.close()
+                            
                         GetCPInfo(T21FileName)
                         GetAtomInfo(T21FileName)
                     
