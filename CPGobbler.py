@@ -314,6 +314,8 @@ def main():
                             
                             
                         T21 = kf.kffile(T21FileName)
+                        RunType = T21.stringData("General", "runtype")
+                        print "Run type: %s" % RunType
                         ExitStatus = T21.stringData("General", "termination status")
                         if not 'NORMAL TERMINATION' in ExitStatus:
                             print "T21 file reports abnormal termination: %s. skipping..." % ExitStatus
