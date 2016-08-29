@@ -306,12 +306,13 @@ def main():
                 if len(T21FileName) > 2:
                     if IsWindows:
                         T21FileName = (CurrentDir + '\\' + T21FileName).replace('\r','')
-                    if True:#os.path.exists(T21FileName):
+                    if os.path.exists(T21FileName):
                         T21BaseName = os.path.basename(T21FileName)
                         
                         if '.' in T21BaseName:
                             T21BaseName = T21BaseName.rpartition('.')[0]
                             
+                        print "Full file path: %s" % T21FileName
                             
                         T21 = kf.kffile(T21FileName)
                         RunType = T21.stringData("General", "runtype")
