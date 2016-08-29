@@ -316,7 +316,7 @@ def main():
                         T21 = kf.kffile(T21FileName)
                         ExitStatus = T21.stringData("General", "termination status")
                         if not 'NORMAL TERMINATION' in ExitStatus:
-                            print "T21 file reports abnormal termination. skipping..."
+                            print "T21 file reports abnormal termination: %s. skipping..." % ExitStatus
                             continue
                         NumCPs = T21.read("Properties", "CP number of")
                         if NumCPs is None or NumCPs <= 0:
